@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: zainE;
+  font-style: ExtraBold ;
+  font-display: swap;
+  font-weight: 800;
+  src: url("/fonts/Oswald.woff2") format("tff");
+}
+
+@font-face {
+  font-family: zainB;
+  font-style: Bold ;
+  font-display: swap;
+  font-weight: 700;
+  src: url("../public/fonts/Zain/Zain-Bold.ttf  ") format("tff");
+}
+
+@theme{
+    --font-zainE: zainE;
+    --font-zainB: zainB;
+}
