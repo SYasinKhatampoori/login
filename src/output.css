@@ -174,8 +174,26 @@
   }
 }
 @layer utilities {
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+  .mt-9 {
+    margin-top: calc(var(--spacing) * 9);
+  }
+  .mt-16 {
+    margin-top: calc(var(--spacing) * 16);
+  }
+  .mt-\[1px\] {
+    margin-top: 1px;
+  }
+  .mt-\[12s1px\] {
+    margin-top: 12s1px;
+  }
   .mt-\[59px\] {
     margin-top: 59px;
+  }
+  .mt-\[101px\] {
+    margin-top: 101px;
   }
   .mt-\[121px\] {
     margin-top: 121px;
@@ -185,6 +203,9 @@
   }
   .hidden {
     display: none;
+  }
+  .table {
+    display: table;
   }
   .h-10 {
     height: calc(var(--spacing) * 10);
@@ -198,9 +219,6 @@
   .h-\[117px\] {
     height: 117px;
   }
-  .h-\[527px\] {
-    height: 527px;
-  }
   .h-screen {
     height: 100vh;
   }
@@ -212,6 +230,12 @@
   }
   .w-full {
     width: 100%;
+  }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .resize {
+    resize: both;
   }
   .flex-col {
     flex-direction: column;
@@ -236,6 +260,9 @@
   }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
+  }
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
   }
   .gap-3\.5 {
     gap: calc(var(--spacing) * 3.5);
@@ -331,12 +358,19 @@
   .text-\[\#FFFFFF\] {
     color: #FFFFFF;
   }
+  .underline {
+    text-decoration-line: underline;
+  }
   .opacity-90 {
     opacity: 90%;
   }
   .shadow-\[0px_7px_15px_-6px_\#5C636940\] {
     --tw-shadow: 0px 7px 15px -6px var(--tw-shadow-color, #5C636940);
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
   }
   .outline-none {
     --tw-outline-style: none;
@@ -576,6 +610,11 @@
   inherits: false;
   initial-value: 0 0 #0000;
 }
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
@@ -599,6 +638,7 @@
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-outline-style: solid;
       --tw-font-weight: initial;
     }
   }
