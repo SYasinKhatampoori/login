@@ -7,6 +7,7 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-white: #fff;
     --spacing: 0.25rem;
     --text-sm: 0.875rem;
     --text-sm--line-height: calc(1.25 / 0.875);
@@ -14,8 +15,12 @@
     --text-lg--line-height: calc(1.75 / 1.125);
     --text-xl: 1.25rem;
     --text-xl--line-height: calc(1.75 / 1.25);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: calc(2.5 / 2.25);
     --text-6xl: 3.75rem;
     --text-6xl--line-height: 1;
     --font-weight-medium: 500;
@@ -174,29 +179,8 @@
   }
 }
 @layer utilities {
-  .mt-2 {
-    margin-top: calc(var(--spacing) * 2);
-  }
-  .mt-9 {
-    margin-top: calc(var(--spacing) * 9);
-  }
-  .mt-16 {
-    margin-top: calc(var(--spacing) * 16);
-  }
-  .mt-\[1px\] {
-    margin-top: 1px;
-  }
-  .mt-\[12s1px\] {
-    margin-top: 12s1px;
-  }
-  .mt-\[59px\] {
-    margin-top: 59px;
-  }
-  .mt-\[101px\] {
-    margin-top: 101px;
-  }
-  .mt-\[121px\] {
-    margin-top: 121px;
+  .mt-7 {
+    margin-top: calc(var(--spacing) * 7);
   }
   .flex {
     display: flex;
@@ -207,11 +191,11 @@
   .table {
     display: table;
   }
-  .h-10 {
-    height: calc(var(--spacing) * 10);
+  .h-8 {
+    height: calc(var(--spacing) * 8);
   }
-  .h-16 {
-    height: calc(var(--spacing) * 16);
+  .h-13 {
+    height: calc(var(--spacing) * 13);
   }
   .h-\[28\] {
     height: 28;
@@ -222,8 +206,8 @@
   .h-screen {
     height: 100vh;
   }
-  .w-\[681px\] {
-    width: 681px;
+  .w-\[581px\] {
+    width: 581px;
   }
   .w-\[full\] {
     width: full;
@@ -300,14 +284,26 @@
   .border-\[\#7FB77E\] {
     border-color: #7FB77E;
   }
-  .bg-\[\#5C636940\] {
-    background-color: #5C636940;
-  }
   .bg-\[\#7FB77E\] {
     background-color: #7FB77E;
   }
   .bg-\[\#F5F6F4\] {
     background-color: #F5F6F4;
+  }
+  .bg-linear-to-br {
+    --tw-gradient-position: to bottom right;
+    @supports (background-image: linear-gradient(in lab, red, red)) {
+      --tw-gradient-position: to bottom right in oklab;
+    }
+    background-image: linear-gradient(var(--tw-gradient-stops));
+  }
+  .from-\[\#7FB77E1A\] {
+    --tw-gradient-from: #7FB77E1A;
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .to-white {
+    --tw-gradient-to: var(--color-white);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
   .p-10 {
     padding: calc(var(--spacing) * 10);
@@ -315,14 +311,14 @@
   .px-11 {
     padding-inline: calc(var(--spacing) * 11);
   }
-  .px-\[33px\] {
-    padding-inline: 33px;
+  .px-\[23px\] {
+    padding-inline: 23px;
   }
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
   }
-  .py-\[23px\] {
-    padding-block: 23px;
+  .py-5 {
+    padding-block: calc(var(--spacing) * 5);
   }
   .font-zainB {
     font-family: var(--font-zainB);
@@ -330,17 +326,24 @@
   .font-zainE {
     font-family: var(--font-zainE);
   }
-  .text-3xl {
-    font-size: var(--text-3xl);
-    line-height: var(--tw-leading, var(--text-3xl--line-height));
+  .text-4xl {
+    font-size: var(--text-4xl);
+    line-height: var(--tw-leading, var(--text-4xl--line-height));
   }
-  .text-6xl {
-    font-size: var(--text-6xl);
-    line-height: var(--tw-leading, var(--text-6xl--line-height));
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
   }
   .text-xl {
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .text-\[16px\] {
+    font-size: 16px;
   }
   .tracking-\[0\%\] {
     --tw-tracking: 0%;
@@ -384,6 +387,11 @@
   .placeholder\:text-\[\#42474d8c\] {
     &::placeholder {
       color: #42474d8c;
+    }
+  }
+  .max-md\:mt-4 {
+    @media (width < 48rem) {
+      margin-top: calc(var(--spacing) * 4);
     }
   }
   .max-md\:mt-14 {
@@ -437,6 +445,11 @@
       padding-inline: calc(var(--spacing) * 4);
     }
   }
+  .max-md\:px-9 {
+    @media (width < 48rem) {
+      padding-inline: calc(var(--spacing) * 9);
+    }
+  }
   .max-md\:px-12 {
     @media (width < 48rem) {
       padding-inline: calc(var(--spacing) * 12);
@@ -447,14 +460,19 @@
       padding-inline: 25px;
     }
   }
+  .max-md\:py-1 {
+    @media (width < 48rem) {
+      padding-block: calc(var(--spacing) * 1);
+    }
+  }
+  .max-md\:py-2 {
+    @media (width < 48rem) {
+      padding-block: calc(var(--spacing) * 2);
+    }
+  }
   .max-md\:py-2\.5 {
     @media (width < 48rem) {
       padding-block: calc(var(--spacing) * 2.5);
-    }
-  }
-  .max-md\:py-3\.5 {
-    @media (width < 48rem) {
-      padding-block: calc(var(--spacing) * 3.5);
     }
   }
   .max-md\:py-\[30px\] {
@@ -472,16 +490,16 @@
       font-family: var(--font-zainE);
     }
   }
+  .max-md\:text-2xl {
+    @media (width < 48rem) {
+      font-size: var(--text-2xl);
+      line-height: var(--tw-leading, var(--text-2xl--line-height));
+    }
+  }
   .max-md\:text-3xl {
     @media (width < 48rem) {
       font-size: var(--text-3xl);
       line-height: var(--tw-leading, var(--text-3xl--line-height));
-    }
-  }
-  .max-md\:text-lg {
-    @media (width < 48rem) {
-      font-size: var(--text-lg);
-      line-height: var(--tw-leading, var(--text-lg--line-height));
     }
   }
   .max-md\:text-sm {
@@ -490,9 +508,25 @@
       line-height: var(--tw-leading, var(--text-sm--line-height));
     }
   }
+  .max-md\:text-xl {
+    @media (width < 48rem) {
+      font-size: var(--text-xl);
+      line-height: var(--tw-leading, var(--text-xl--line-height));
+    }
+  }
+  .max-md\:text-\[1px\] {
+    @media (width < 48rem) {
+      font-size: 1px;
+    }
+  }
   .max-md\:text-\[10px\] {
     @media (width < 48rem) {
       font-size: 10px;
+    }
+  }
+  .max-md\:text-\[13px\] {
+    @media (width < 48rem) {
+      font-size: 13px;
     }
   }
   .max-md\:text-\[20px\] {
@@ -500,9 +534,9 @@
       font-size: 20px;
     }
   }
-  .max-md\:text-\[40px\] {
+  .max-md\:text-\[30px\] {
     @media (width < 48rem) {
-      font-size: 40px;
+      font-size: 30px;
     }
   }
   .max-md\:font-medium {
@@ -540,6 +574,48 @@
   syntax: "*";
   inherits: false;
   initial-value: solid;
+}
+@property --tw-gradient-position {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-from {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-via {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-to {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-stops {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-via-stops {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-from-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+@property --tw-gradient-via-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 50%;
+}
+@property --tw-gradient-to-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 100%;
 }
 @property --tw-tracking {
   syntax: "*";
@@ -623,6 +699,15 @@
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-border-style: solid;
+      --tw-gradient-position: initial;
+      --tw-gradient-from: #0000;
+      --tw-gradient-via: #0000;
+      --tw-gradient-to: #0000;
+      --tw-gradient-stops: initial;
+      --tw-gradient-via-stops: initial;
+      --tw-gradient-from-position: 0%;
+      --tw-gradient-via-position: 50%;
+      --tw-gradient-to-position: 100%;
       --tw-tracking: initial;
       --tw-shadow: 0 0 #0000;
       --tw-shadow-color: initial;
